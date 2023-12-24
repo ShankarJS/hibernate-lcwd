@@ -103,7 +103,4 @@ public class Address {
 				+ ", x=" + x + ", date=" + date + ", image=" + Arrays.toString(image) + "]";
 	}
 	
-	
-	
-	
 }

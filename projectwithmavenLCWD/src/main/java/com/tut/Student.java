@@ -8,9 +8,10 @@ public class Student {
 
 	@Id
 	private int id;
-
 	private String name;
 	private String city;
+	
+	private Certifcate certi;
 
 	public Student(int id, String name, String city) {
 		super();
@@ -22,6 +23,14 @@ public class Student {
 	public Student() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Certifcate getCerti() {
+		return certi;
+	}
+
+	public void setCerti(Certifcate certi) {
+		this.certi = certi;
 	}
 
 	public int getId() {
@@ -52,11 +61,5 @@ public class Student {
 	public String toString() {
 		return "Student [id=" + id + ", name=" + name + ", city=" + city + "]";
 	}
-	
-	
-
-	
-	
-	
 
 }

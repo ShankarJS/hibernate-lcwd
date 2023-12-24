@@ -20,7 +20,7 @@ public class App
         System.out.println( "Project started.." );
         
         Configuration cfg = new Configuration();
-        cfg.configure();
+        cfg.configure("hibernate.cfg.xml");
         SessionFactory factory = cfg.buildSessionFactory();
         
         //creating student
@@ -67,15 +67,12 @@ public class App
         address2.setDate(new Date());
         address2.setX(1234.433);
         
-        
       //Reading Image
         FileInputStream fis2 = new FileInputStream("src/main/java/collection.png");
         byte[] data2 = new byte[fis2.available()];
         fis2.read(data2);
         address2.setImage(data2);
         fis2.close();
-        
-        
         
         Session session = factory.openSession();
         Transaction tx = session.beginTransaction();
@@ -86,7 +83,7 @@ public class App
         session.save(address2);
         tx.commit();
         session.close();
-        System.out.println("done..c	");
+        System.out.println("Done..");
     
         System.out.println(factory);
         System.out.println(factory.isClosed());

@@ -1,0 +1,4 @@
+
+@Embeddable
+@Entity
+@OneToOne
