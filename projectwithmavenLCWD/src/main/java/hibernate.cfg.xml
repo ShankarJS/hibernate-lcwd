@@ -10,11 +10,23 @@
 		<property name="connection.username">root</property>
 		<property name="connection.password">root</property>
 		<property name="dialect">org.hibernate.dialect.MySQL8Dialect</property>
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
+		
 		<mapping class="com.tut.Student"/>
 		<mapping class="com.tut.Address"/>
-		<mapping class="com.map.Question"/>
-		<mapping class="com.map.Answer"/>
+		
+		<mapping class="com.map.onetoone.Question"/>
+		<mapping class="com.map.onetoone.Answer"/>
+		
+		<mapping class="com.map.onetomany.QuestionOTM"/>
+		<mapping class="com.map.onetomany.AnswerOTM"/>
+		
+		<mapping class="com.map.manytomany.Emp"/>
+		<mapping class="com.map.manytomany.Project"/>
+		
+		<mapping class="com.map.onetomanyfetchtechnq.QuestionOTMFetch"/>
+		<mapping class="com.map.onetomanyfetchtechnq.AnswerOTMFetch"/>
 	</session-factory>
 </hibernate-configuration>

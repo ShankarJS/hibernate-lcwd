@@ -1,4 +1,4 @@
-package com.map;
+package com.map.onetoone;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -42,6 +42,12 @@ public class MapDemo {
 		s.save(a2);
 		
 		tx.commit();
+		
+		Question readQuestion = (Question)s.get(Question.class, 1111);
+		System.out.println(readQuestion.getQuestion());
+		System.out.println(readQuestion.getAnswer().getAnswer());
+		
+		
 		s.close();
 		sFactory.close();
 

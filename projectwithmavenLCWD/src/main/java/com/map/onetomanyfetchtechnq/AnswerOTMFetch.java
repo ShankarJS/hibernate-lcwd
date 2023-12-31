@@ -1,21 +1,23 @@
-package com.map;
+package com.map.onetomanyfetchtechnq;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
 @Entity
-public class Answer {
+@Table(name="answer_otm_fetch")
+public class AnswerOTMFetch {
 	@Id
 	@Column(name="answer_id")
 	private int answerId;
 	private String answer;
 	
-	//mappedBy will ensure that foreign key is created only in question table
-	@OneToOne(mappedBy = "answer")
-	private Question question;
+	@ManyToOne
+	private QuestionOTMFetch question;
 	
 	public int getAnswerId() {
 		return answerId;
@@ -23,10 +25,10 @@ public class Answer {
 	public void setAnswerId(int answerId) {
 		this.answerId = answerId;
 	}
-	public Question getQuestion() {
+	public QuestionOTMFetch getQuestion() {
 		return question;
 	}
-	public void setQuestion(Question question) {
+	public void setQuestion(QuestionOTMFetch question) {
 		this.question = question;
 	}
 	public String getAnswer() {
@@ -36,13 +38,13 @@ public class Answer {
 		this.answer = answer;
 	}
 	
-	public Answer(int answerId, String answer) {
+	public AnswerOTMFetch(int answerId, String answer) {
 		super();
 		this.answerId = answerId;
 		this.answer = answer;
 	}
 	
-	public Answer() {
+	public AnswerOTMFetch() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
