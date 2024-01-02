@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
@@ -20,7 +21,7 @@ public class QuestionOTM {
 	private String question;
 	
 	//mappedBy will ensure no foreign key column is created in question_otm table, but in answer_otm table only and also no extra table with only ids be created
-	@OneToMany(mappedBy="question")
+	@OneToMany(mappedBy="question", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<AnswerOTM> answers;
 	
 	public List<AnswerOTM> getAnswers() {
