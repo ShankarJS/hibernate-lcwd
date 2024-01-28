@@ -14,6 +14,9 @@
 		<property name="show_sql">true</property>
 		<property name="format_sql">true</property>
 		
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+		
 		<mapping class="com.tut.Student"/>
 		<mapping class="com.tut.Address"/>
 		
@@ -28,5 +31,7 @@
 		
 		<mapping class="com.map.onetomanyfetchtechnq.QuestionOTMFetch"/>
 		<mapping class="com.map.onetomanyfetchtechnq.AnswerOTMFetch"/>
+		
+		<mapping resource="com/mapping/xml/Person.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>
